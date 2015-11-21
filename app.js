@@ -13,8 +13,7 @@ var User = require('./models/user')
 var Video = require('./models/video')
 var Challenge = require('./models/challenge')
 var Donation = require('./models/donation')
-
-
+var Charity = require('./models/charity')
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -24,11 +23,11 @@ app.use(express.static(__dirname + '/public'));
 //INDEX
 app.get('/', function(req, res) {
   console.log('hitting root route')
-  res.render('index')
+  res.render('pages/index')
 })
 
-app.get('/', function(req, res) {
-  res.render('pages')
+app.get('/video', function(req, res) {
+  res.render('pages/video')
 })
 
 app.get('/pagethree', function(req, res) {
