@@ -9,11 +9,11 @@ var mongoose    = require('mongoose');
 
 mongoose.connect('mongodb://localhost/challenge-app')
 
-var User = require('./models/user')
-var Video = require('./models/video')
-var Challenge = require('./models/challenge')
-var Donation = require('./models/donation')
-var Charity = require('./models/charity')
+var User = require('./models/user');
+var Video = require('./models/video');
+var Challenge = require('./models/challenge');
+var Donation = require('./models/donation');
+var Charity = require('./models/charity');
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
