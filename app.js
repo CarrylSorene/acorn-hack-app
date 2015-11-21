@@ -15,7 +15,6 @@ var Challenge = require('./models/challenge')
 var Donation = require('./models/donation')
 
 
-
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -24,10 +23,10 @@ app.use(express.static(__dirname + '/public'));
 //INDEX
 app.get('/', function(req, res) {
   console.log('hitting root route')
-  res.render('index')
+  res.render('pages/index')
 })
 
-app.get('/', function(req, res) {
+app.get('/video', function(req, res) {
   res.render('pages')
 })
 
