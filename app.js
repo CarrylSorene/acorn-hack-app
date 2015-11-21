@@ -7,6 +7,15 @@ var bodyParser  = require('body-parser')
 var logger      = require('morgan')
 var mongoose    = require('mongoose');
 
+mongoose.connect('mongodb://localhost/challenge-app')
+
+var User = require('./models/user')
+var Video = require('./models/video')
+var Challenge = require('./models/challenge')
+var Donation = require('./models/donation')
+
+
+
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -18,7 +27,7 @@ app.get('/', function(req, res) {
   res.render('index')
 })
 
-app.get('/pagetwo', function(req, res) {
+app.get('/', function(req, res) {
   res.render('pages')
 })
 
