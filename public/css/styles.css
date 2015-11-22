@@ -1,9 +1,4 @@
-h1, .navList {
-  width: 70%;
-  margin: 0 auto;
-  }
-
-  .navListItem {
+.navListItem {
   display: inline-block;
   padding: 3%;
 }
@@ -35,10 +30,6 @@ table {
 .videoInfoDetail {
   width:69%;
 }
-
-/*p {
-  text-align: center;
-}*/
 
 #stats {
   text-align: center;
