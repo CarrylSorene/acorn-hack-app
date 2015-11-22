@@ -1,59 +1,64 @@
 var mongoose = require('mongoose');
+var async = require('async')
 
-var User = require('./models/user');
-var Video = require('./models/video');
-var Challenge = require('./models/challenge');
-var Donation = require('./models/donation');
-var Charity = require('./models/charity');
+var User = require('../models/user');
+var Video = require('../models/video');
+var Challenge = require('../models/challenge');
+var Donation = require('../models/donation');
+var Charity = require('../models/charity');
 
-mongoose.connect('mongodb://localhost/challenge-app')
+// Drop all data that already exists? is this a good idea?
+mongoose.connect('mongodb://localhost/challenge-app', function(){
+    /* Drop the DB */
+    mongoose.connection.db.dropDatabase();
+    console.log("dropped db")
 
-var video1 = new Video ({
-  title: "CINNAMON CHALLENGE vs PORKY PARRY",
-  videoId: "87Cwaf8pyN4",
-  user: "Lewis"
+    var user1 = new User ({
+      name: "Lewis" 
+    });
+
+
+    var challenge1 = new Challenge ({
+      title: "Cinnamon Challenge",
+      user: user1,
+      category: "Cinnamon"
+    });
+
+    var video1 = new Video ({
+      title: "CINNAMON CHALLENGE vs PORKY PARRY",
+      videoId: "87Cwaf8pyN4",
+      user: user1,
+      challenge: challenge1
+    });
+
+    var charity1 = new Charity ({
+      name: "British Heart Foundation",
+      total: 1000
+    });
+
+
+    var donation1 = new Donation ({
+      user: user1,
+      amount: 50,
+      charity: charity1,
+      challenge: challenge1
+    });
+
+    async.parallel([
+      challenge1.save,
+      video1.save,
+      charity1.save,
+      donation1.save,
+      user1.save,
+    ], function(err, data) {
+      if(err) console.log(err)
+
+      console.log(data)
+      mongoose.disconnect();
+    })
 });
 
-video1.save(function(err, video){
-  if(err) console.log(err)
-    console.log('video1 saved', video)
-})
 
-var challenge1 = new Challenge ({
-  user: "Lewis",
-  category: "Cinnamon"
-});
 
-var charity1 = new Charity ({
-  name: "British Heart Foundation",
-  total: 1000
-});
 
-var donation1 = new Donation ({
-  user: "Lewis",
-  amount: 50
-});
 
-var user1 = new User ({
-  name: "Lewis" 
-});
-
-challenge1.save(function(err, challenge){
-  if(err) console.log(err)
-    console.log('challenge1 saved', challenge)
-})
-
-charity1.save(function(err, charity){
-  if(err) console.log(err)
-    console.log('charity1 saved', charity)
-})
-
-donation1.save(function(err, donation){
-  if(err) console.log(err)
-    console.log('donation1 saved', donation)
-})
-
-user1.save(function(err, user){
-  if(err) console.log(err)
-    console.log('user1 saved', user)
-})
