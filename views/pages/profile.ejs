@@ -10,7 +10,13 @@
   <% include ../partials/mainNav %>
 
   <h2 class="center">Profile</h2>
-   
+  <div class="center">
+  <img src="images/lewis.png">
+  </div>
+  <h5 class="center">Name: <%= user[0].name %></h5>
+  <h5 class="center">D.O.B: <%= user[0].dob %></h5>
+  <h5 class="center">Challenges: <%= user[0].challenge %></h5>
+
   <% include ../partials/subNav %>
 
   <% include ../partials/footer %>

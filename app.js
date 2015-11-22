@@ -43,7 +43,10 @@ app.get('/friends', function(req, res) {
 })
 
 app.get('/profile', function(req, res) {
-  res.render('pages/profile')
+  User.find({name:"Lewis"}, function(err, _user) {    
+    // console.log(_user)
+    res.render('pages/profile', { user: _user })
+  })
 })
 
 app.get('/statistics', function(req, res) {
