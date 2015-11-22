@@ -50,6 +50,10 @@ app.get('/statistics', function(req, res) {
   res.render('pages/statistics')
 })
 
+app.get('/upload', function(req, res) {
+  res.render('pages/statistics')
+})
+
 app.use(cors());
 app.use(logger('dev'));
 
