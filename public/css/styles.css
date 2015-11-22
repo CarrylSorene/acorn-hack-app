@@ -1,7 +1,8 @@
-h1, .navList {
-  width: 70%;
+.navList {
+  width: 50%;
   margin: 0 auto;
   }
+
 
   .navListItem {
   display: inline-block;
