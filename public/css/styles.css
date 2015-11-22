@@ -3,6 +3,10 @@
   padding: 3%;
 }
 
+.navBarLink {
+  padding: 0 10px;
+}
+
 .videoList {
   width: 99%;
   min-width: 300px;
@@ -35,4 +39,9 @@ table {
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
 }

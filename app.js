@@ -54,7 +54,11 @@ app.get('/statistics', function(req, res) {
 })
 
 app.get('/upload', function(req, res) {
-  res.render('pages/statistics')
+  res.render('pages/upload')
+})
+
+app.get('/adduser', function(req, res) {
+  res.render('pages/adduser')
 })
 
 app.use(cors());
