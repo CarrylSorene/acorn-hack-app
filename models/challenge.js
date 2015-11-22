@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 
 var challengeSchema = new mongoose.Schema({
   title: {type: String, required: true},
-  user: String,
+  user: {type: mongoose.Schema.ObjectId, ref: 'User'},
   category: String
   })
 
