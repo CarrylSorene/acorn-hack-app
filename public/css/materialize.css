@@ -5453,6 +5453,7 @@ nav {
     display: inline-block;
     font-size: 2.1rem;
     padding: 0;
+    padding-left: 10px;
     white-space: nowrap; }
     nav .brand-logo.center {
       left: 50%;
