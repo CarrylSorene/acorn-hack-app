@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static(__dirname + '/public'));
 
-//INDEX
+//ROUTES
 app.get('/', function(req, res) {
   console.log('hitting root route')
   res.render('pages/index')
@@ -30,8 +30,24 @@ app.get('/video', function(req, res) {
   res.render('pages/video')
 })
 
-app.get('/pagethree', function(req, res) {
-  res.render('pages')
+app.get('/donate', function(req, res) {
+  res.render('pages/donate')
+})
+
+app.get('/challenges', function(req, res) {
+  res.render('pages/challenges')
+})
+
+app.get('/friends', function(req, res) {
+  res.render('pages/friends')
+})
+
+app.get('/profile', function(req, res) {
+  res.render('pages/profile')
+})
+
+app.get('/statistics', function(req, res) {
+  res.render('pages/statistics')
 })
 
 app.use(cors());
