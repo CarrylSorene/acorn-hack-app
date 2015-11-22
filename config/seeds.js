@@ -14,7 +14,9 @@ mongoose.connect('mongodb://localhost/challenge-app', function(){
     console.log("dropped db")
 
     var user1 = new User ({
-      name: "Lewis" 
+      name: "Lewis",
+      dob: "2000-10-10",
+      challenge: "Ice Bucket"
     });
 
 
