@@ -1,0 +1,23 @@
+h1, .navList {
+  width: 70%;
+  margin: 0 auto;
+  }
+
+  .navListItem {
+  display: inline-block;
+  padding: 3%;
+}
+
+.videoList {
+  width: 99%;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+.oneVideo {
+  display: inline-block;
+}
+
+a {
+  color: #1a237e;
+}
