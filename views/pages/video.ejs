@@ -4,18 +4,32 @@
   <% include ../partials/header %>
 </head>
 <body>
+
+  <div class="container">
   
-  <% include ../partials/nav %>
+  <% include ../partials/MainNav %>
 
   <section id="video" class="video">
 
-    <ul class="center-align">
-      <li id="videoBox"><iframe width="560" height="315" src="https://www.youtube.com/embed/87Cwaf8pyN4" frameborder="0" allowfullscreen></iframe></li>
-      <li id="videoTitle">CINNAMON CHALLENGE vs PORKY PARRY</li>
-      <li id="videoCharity">British Heart Foundation</li>
-      <li id="donationAmount">£50</li>
-      <li id="videoDescription">Mike 'Porky' Parry does the Cinnamon challenge</li>
-    </ul>
+    
+      <p class="center-align"id="videoBox"><iframe width="560" height="315" src="https://www.youtube.com/embed/87Cwaf8pyN4" frameborder="0" allowfullscreen></iframe></p>
+      <table>
+      <tr>
+        <td>Title</td>
+        <td>CINNAMON CHALLENGE vs PORKY PARRY</td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td>Mike 'Porky' Parry does the Cinnamon challenge</td>
+      </tr>
+      <tr>
+        <td>Charity</td>
+        <td>British Heart Foundation</td>
+      </tr>
+      <tr>
+        <td>Amount Donated</td>
+        <td>£50</td>
+      </tr>
 
   </section>
 
@@ -23,7 +37,10 @@
     <a href="donate.ejs"><button>DONATE</button></a>
   </section>
 
+  <% include ../partials/subNav %>
+
   <% include ../partials/footer %>
   
+  </div>
 </body>
 </html>
