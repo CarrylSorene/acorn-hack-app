@@ -4,53 +4,6 @@
   <% include ../partials/header %>
 </head>
 <body>
-
-<body onload="init();" style="background-color:#ababab;" >
-<div style="width:352px; height:625px; margin:0 auto; background-color:#fff;" >
-    <div>
-      <video id="camFeed" width="320" height="240" autoplay>
-    </video>
-  </div>
-
-    <div>
-        <canvas id="photo" width="320" height="240">
-        </canvas>
-    </div>
-
-    <div style="margin:0 auto; width:82px;">
-        <input type="button" value="Take Photo" onclick="takePhoto();">
-    </div>
-</div>
-<script>
-function init()
-{
-    if(navigator.webkitGetUserMedia)
-    {
-        navigator.webkitGetUserMedia({video:true}, onSuccess, onFail);
-    }
-    else
-    {
-        alert('webRTC not available');
-    }
-}
-
-function onSuccess(stream)
-{
-    document.getElementById('camFeed').src = webkitURL.createObjectURL(stream);
-}
-
-function onFail()
-{
-    alert('could not connect stream');
-}
-
-function takePhoto()
-{
-    var c = document.getElementById('photo');
-    var v = document.getElementById('camFeed');
-    c.getContext('2d').drawImage(v, 0, 0, 320, 240);
-}
-</script>
   
   <% include ../partials/nav %>
 
@@ -90,6 +43,53 @@ function takePhoto()
     <% include ../partials/mainNav %>
 
     <% include ../partials/footer %>
+
+    <body onload="init();" style="background-color:#ababab;" >
+  <div style="width:352px; height:625px; margin:0 auto; background-color:#fff;" >
+      <div>
+        <video id="camFeed" width="320" height="240" autoplay>
+      </video>
+    </div>
+
+      <div>
+          <canvas id="photo" width="320" height="240">
+          </canvas>
+      </div>
+
+      <div style="margin:0 auto; width:82px;">
+          <input type="button" value="Take Photo" onclick="takePhoto();">
+      </div>
+  </div>
+  <script>
+  function init()
+  {
+      if(navigator.webkitGetUserMedia)
+      {
+          navigator.webkitGetUserMedia({video:true}, onSuccess, onFail);
+      }
+      else
+      {
+          alert('webRTC not available');
+      }
+  }
+
+  function onSuccess(stream)
+  {
+      document.getElementById('camFeed').src = webkitURL.createObjectURL(stream);
+  }
+
+  function onFail()
+  {
+      alert('could not connect stream');
+  }
+
+  function takePhoto()
+  {
+      var c = document.getElementById('photo');
+      var v = document.getElementById('camFeed');
+      c.getContext('2d').drawImage(v, 0, 0, 320, 240);
+  }
+  </script>
   
   </div>
 </body>
