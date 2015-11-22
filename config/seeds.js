@@ -14,6 +14,11 @@ var video1 = new Video ({
   user: "Lewis"
 });
 
+video1.save(function(err, video){
+  if(err) console.log(err)
+    console.log('video1 saved', video)
+})
+
 var challenge1 = new Challenge ({
   user: "Lewis",
   category: "Cinnamon"
@@ -32,11 +37,6 @@ var donation1 = new Donation ({
 var user1 = new User ({
   name: "Lewis" 
 });
-
-video1.save(function(err, video){
-  if(err) console.log(err)
-    console.log('video1 saved', video)
-})
 
 challenge1.save(function(err, challenge){
   if(err) console.log(err)
