@@ -21,3 +21,17 @@ h1, .navList {
 a {
   color: #1a237e;
 }
+
+table {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.videoInfoHeading {
+  width: 30%;
+  font-weight: bold;
+}
+
+.videoInfoDetail {
+  width:69%;
+}
