@@ -4,11 +4,47 @@
   <% include ../partials/header %>
 </head>
 
-  <% include ../partials/nav %>
-
-  <p>fnlkjnlvkgnsklf</p>
-   
   <% include ../partials/mainNav %>
+
+  <h2 class="center">Upload Video</h2>
+
+  <div class="row">
+    <form>
+      <div class="row">
+
+        <div class="input-field">
+        <label for="user">Name</label>
+        <input id="user" type="text" class="validate" placeholder="Mike 'Porky' Parry">
+        </div>
+        
+        <div class="input-field">
+          <label for="videoTitle">Title</label>
+          <input id="videoTitle" type="text" class="validate" placeholder="Extreme Ice Bath Challenge">
+        </div>
+
+        <div class="input-field">
+          <label for="videoDescription">Description</label>
+          <input id="videoDescription" type="text" class="validate" placeholder="Mike 'Porky' Parry does the Cinnamon challenge">
+        </div>
+
+        <div class="input-field">
+          <label for="videoId">Video ID</label>
+          <input id="videoId" type="text" class="validate" placeholder="87Cwaf8pyN4">
+        </div>
+
+        <div class="input-field">
+          <label for="challenge">Challenge</label>
+          <input id="challenge" type="text" class="validate" placeholder="Ice Bucket Challenge">
+        </div>
+
+        <button class="waves-effect waves-light btn-large" action="/video" method="POST">Upload</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+   
+  <% include ../partials/subNav %>
 
   <% include ../partials/footer %>
   
